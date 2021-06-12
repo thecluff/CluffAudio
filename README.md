@@ -26,7 +26,7 @@ Audio Generation & Processing in C++, Javascript, and Swift.
 <a href="https://github.com/thecluff/CluffAudio/tree/main/PureData">PureData Patches</a> - Fall 2014
 </li>
 <li>
-Javascript DSP - Fall 2018
+<a href="https://github.com/thecluff/CluffAudio/tree/main/Javascript">Javascript DSP</a> - Fall 2018
 </li>
 <li>
 <a href="https://github.com/thecluff/CluffAudio/tree/main/C%2B%2B">C++ DSP</a> - Spring 2019
