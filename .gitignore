@@ -1,0 +1,10 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+*.wav
+*.xcworkspacedata
+*.xcuserstate
+*.entitlements
+*.aif
+*.caf
+
+

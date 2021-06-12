@@ -1,0 +1,3 @@
+#N canvas 893 139 450 300 10;
+#X obj 59 25 adc~;
+#X msg 72 56 open adam2_1.mp3;
