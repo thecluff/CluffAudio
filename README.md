@@ -1,5 +1,4 @@
-﻿<br />
-<p align="center">
+﻿<p align="center">
     <img src="https://user-images.githubusercontent.com/29167186/121762361-44c74480-caea-11eb-939a-58d13f9b41eb.png" alt="Logo" width="100" height="100">
 
   <h3 align="center">Audio Programming</h3>
