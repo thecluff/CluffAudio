@@ -13,6 +13,6 @@
 
 Audio Generation & Processing in Javascript.
 
-``
-Open index.html in any browser
-``
+For best results, just view everything here: <a href="https://thecluff.com/DAT120/">https://thecluff.com/DAT120/</a>
+
+To view the actual code, just check out the contents of this repo :)
