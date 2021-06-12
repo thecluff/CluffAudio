@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <title>
+        Fruit Table
+    </title>
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        table {
+            color: #333;
+            background: white;
+            border: 1px solid grey;
+            font-size: 12pt;
+            border-collapse: collapse;
+        }
+
+        table thead th,
+        table tfoot th {
+            color: #777;
+            background: rgba(0, 0, 0, .1);
+        }
+
+        table caption {
+            padding: .5em;
+        }
+
+        table th,
+        table td {
+            padding: .5em;
+            border: 1px solid lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+
+        <h3>Table Demonstration with Styling</h3>
+
+        <table id='t01' border="1">
+            <tr style="background-color: #777">
+                <td>Oranges</td>
+                <td>Apples</td>
+                <td>Bananas</td>
+                <td>Grapefruit</td>
+                <td>Peaches</td>
+            </tr>
+            <tr style="background-color: #cecece">
+                <td>Pecans</td>
+                <td>Walnuts</td>
+                <td>Almonds</td>
+                <td>Peanuts</td>
+                <td>Brazil Nuts</td>
+            </tr>
+            <script language="javascript">
+                var base = 1;
+                for (index = 0; index < 5; index++) {
+                    document.write("<tr><td>" + Math.pow(base, 1) +
+                        "</td><td>" + Math.pow(base, 2) + "</td><td>" +
+                        Math.pow(base, 3) + "</td><td>" + Math.pow(base, 4) +
+                        "</td><td>" + Math.pow(base, 5) + "</td></tr>");
+                    base++;
+                }
+            </script>
+        </table>
+
+    </center>
+
+</body>
+
+</html>

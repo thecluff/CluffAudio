@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>DFT Implementation</title>
+<script src="js/waveform.js"></script>
+<script src="js/dft.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+</head>
+<body>
+<div id="main">
+<div class="header">
+    <h1>Demonstration of the Discrete Fourier Transform (DFT)</h1>
+    <h2>Using a short length of a complex waveform</h2>
+</div>
+<div class="content" id="x_of_n">
+    <div class="header">
+        <h3>First, start with a complex waveform. A single cycle will do.</h3>
+    </div>
+    <div id="sinewave" style="width:90%;height:400px"></div>
+    <script language="javascript">
+    calcSaw(5);
+    genCmplx();
+    SINEWAVE = document.getElementById('sinewave');
+    Plotly.plot( sinewave, [{ x: xVal, y: yVal }], {margin: { t: 0 } });
+    </script>
+</div>
+
+<div class="content" id="DFT">
+    <div class="header">
+        <h3>Next, calculate the DFT and plot it.</h3>
+    </div>
+    
+    <script type="text/javascript">
+    var SR = 44100;
+    var X = [];
+    X = dft(yVal);
+    var dftAmp = new Array(X.length/2);
+    var dftFreq = new Array(dftAmp.length);
+    var N = dftAmp.length;
+    for(var ndx=0;ndx<N;ndx++) {
+        dftFreq[ndx]=ndx*SR/N;
+        if(dftFreq[ndx]>SR/2) {
+            dftFreq[ndx]=-(SR-dftFreq[ndx]);
+        }
+        dftAmp[ndx] = Math.sqrt(Math.pow(X[ndx*2],2) + Math.pow(X[ndx*2+1],2));
+    }
+    var data = [{ x: dftFreq, y: dftAmp, name: 'real DFT values', type:'bar' }];
+    </script>
+    <div id="dft" style="width:90%;height:400px;"></div>
+    <script type="text/javascript" >
+    DFT = document.getElementById('dft');
+    Plotly.plot('dft', data);
+    </script>
+
+    <div class="content" id="x2_of_n">
+        <h3>Finally, reconstruct the original waveform from the analysis (DFT) data.</h3>
+    <div id="idft" style="width:90%;height:400px;"></div>
+    <script type="text/javascript" >
+    var x2_of_n = idft(X);
+    IDFT = document.getElementById('idft');
+    var xVal2 = new Array(x2_of_n.length);
+    var yVal2 = new Array(x2_of_n.length);
+    for(var n=0;n<x2_of_n.length;n++) {
+        xVal2[n] = n;
+        yVal2[n] = x2_of_n[n];
+    }
+    var data2 = [ { x:xVal2, y: yVal2, name: 'real DFT values', }];
+    Plotly.plot('idft',data2);
+    </script>
+    </div>
+</div>
+
+</div>
+<script src="js/ui.js"></script>
+</body>
+
+</html>

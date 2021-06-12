@@ -1,0 +1,86 @@
+<!-- This file generates and displays a sine wave. -->
+<DOCTYPE html>
+        
+        <html>
+        
+        <head> 
+            <title>Sine wave</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+        </head>
+        
+        <body>
+            <center>
+                <div id="layout">
+            <div id="main">
+                <p>
+                
+                <h2>This plays a Sine wave.</h2>
+                </p>
+                
+            </div>
+        </div>
+                <script language="javascript">
+                var audioCtx = new (window.AudioContext || window.webkitAudioContext) ();
+                var dur = 1.0 ; // 1 second
+                // The duration * sample rate gives the number of samples
+                var freq = 250;
+                var length = audioCtx.sampleRate * dur;
+                var channels = 1;
+                var myArrayBuffer = audioCtx.createBuffer(channels,length,audioCtx.sampleRate);
+                var numHarms = 500;
+                var xVal = [];  //x-axis index numbers
+                var yVal = [];  //y-axis sine values
+                var omega = 2*Math.PI/audioCtx.sampleRate;
+                var sign = 1;   // This enables changing the signs of the amplitudes
+                // First, clear the indexes of yVal.
+                // Loop through yVal
+                for(var index=0;index<length;index++) {
+                    yVal[index] = 0.0;
+                    xVal[index] = index;
+                    
+                }
+               for(var chan=0;chan<channels;chan++) {
+                    var nowBuffering = myArrayBuffer.getChannelData(chan);
+                    
+                    for(var ndx=1;ndx<=numHarms;ndx+=2) {
+                    for(var index=0;index<length;index++) {
+                        yVal[index] = Math.sin(index*omega);
+                        nowBuffering[index] = yVal[index];
+                        }
+                        sign *= -1; 
+                    }
+            }
+            
+                var peakAmp = 0.0;
+                for(var n=0;n<length;n++) {
+                   
+                    if(yVal[n] > peakAmp){
+                        peakAmp = yVal[n];
+                    }
+                }
+                for(var ndx=0;ndx<length;ndx++){
+                    yVal[ndx] = yVal[ndx] * 1/peakAmp;
+                }
+                
+                
+                        var source = audioCtx.createBufferSource();
+                        source.buffer = myArrayBuffer;
+        source.connect(audioCtx.destination);
+        source.start();
+                </script>
+        <div id="sine" style="width:90%; height:400px;">
+
+        <script language="javascript">
+
+
+            Plotly.plot(sine, [{ x: xVal, y: yVal}], { margin: { t: 0}});
+        </script>
+        
+        </div>
+
+            </center>
+        
+        </body>
+        
+        </html>

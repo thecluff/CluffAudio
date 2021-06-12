@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <title>Responsive Side Menu &ndash; Layout Examples &ndash; Pure</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <script src="js/script.js"></script>
+
+    <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/layouts/side-menu.css">
+    <!--<![endif]-->
+</head>
+
+<body>
+
+    <div id="layout">
+
+        <div id="main">
+            <p>
+                <h1>Sine Wave</h1>
+                <h2>Table Sine</h2>
+            </p>
+
+            <div class="content">
+                <table class="pure-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Phase</th>
+                            <th>Sine</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <script>genSine(32)</script>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="js/ui.js"></script>-->
+
+</body>
+
+</html>

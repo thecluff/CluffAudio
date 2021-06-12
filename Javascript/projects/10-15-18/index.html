@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+        <title>WebAudio</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+        <!--<script src="js/script.js"></script>-->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]>
+            <!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+        <!--<![endif]-->
+    </head>
+    
+    <body>
+        <div id="layout">
+            <div id="main">
+                <p>
+                <h1>WebAudio</h1>
+                <h2>Click on the buttons to play waveforms.</h2>
+                </p>
+                <div class="content">
+                    <p>
+                        
+                        
+                        <a class="mdl-navigation__link" href="triangle.html" target="loadInMe">
+                            <button class="pure-button" >Triangle</button>
+                        </a>
+                        
+                        <a class="mdl-navigation__link" href="sine.html" target="loadInMe">
+                            <button class="pure-button" >Sine</button>
+                        </a> 
+                        
+                        <a class="mdl-navigation__link" href="sawtooth.html" target="loadInMe">
+                            <button class="pure-button" >Sawtooth</button>
+                        </a> 
+                        
+                        <a class="mdl-navigation__link" href="square.html" target="loadInMe">
+                            <button class="pure-button" >Square</button>
+                        </a> 
+                        
+                    </p>
+                    <p>
+                        
+                        <iframe style="width:100%; height:768px;" frameborder="0" name="loadInMe" src=""></iframe>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+</html>

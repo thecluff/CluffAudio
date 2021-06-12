@@ -1,0 +1,109 @@
+<!-- This file generates and displays a sine wave. -->
+<DOCTYPE html>
+        
+        <html>
+        
+        <head> 
+            <title>Sawtooth wave</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+        </head>
+        
+        <body>
+            <center>
+                <div id="layout">
+            <div id="main">
+                <p>
+                
+                <h2>This plays a Sawtooth wave.</h2>
+                </p>
+                
+            </div>
+        </div>
+        
+    <!--       <table id="t01">
+               <tr><td>N</td><td>Phase</td><td>sin()</td></tr> -->
+                <script language="javascript">
+                var audioCtx = new (window.AudioContext || window.webkitAudioContext) ();
+                var dur = 1.0 ; // 1 second
+                // The duration * sample rate gives the number of samples
+                var freq = 110;
+                var length = audioCtx.sampleRate * dur;
+                var channels = 1;
+                var myArrayBuffer = audioCtx.createBuffer(channels,length,audioCtx.sampleRate);
+                var numHarms = 50;
+                var xVal = [];  //x-axis index numbers
+                var yVal = [];  //y-axis sine values
+                var omega = 2*Math.PI/audioCtx.sampleRate;
+                var sign = 1;   // This enables changing the signs of the amplitudes
+                // First, clear the indexes of yVal.
+                // Loop through yVal
+                for(var index=0;index<length;index++) {
+                    yVal[index] = 0.0;
+                    xVal[index] = index;
+                    
+                }
+                // Loop through each sample
+                // One task is to put an index number into xVal
+                // The other task is to calculate the sine value for each angle
+                // And place into yVal
+                // Since we are calculating multiple harmonics per sample, we need a second innerloop
+                // To do the harmonics
+                // Loops are reversed from before so that the harmonics are calculated as a whole rather than sample by sample
+                for(var chan=0;chan<channels;chan++) {
+                    var nowBuffering = myArrayBuffer.getChannelData(chan);
+                    for(var ndx=1;ndx<=numHarms;ndx+=2) {
+                    for(var index=0;index<length;index++) {
+                        yVal[index] = yVal[index] + 1/ndx * Math.sin(ndx*index*omega);
+                        nowBuffering[index] = yVal[index];
+                        }
+                        sign *= -1; // This flips sign to the other polarity.
+                    }
+
+            }
+                // Having put values into the xVal and yVal arrays,
+                // Lets print them into a table and also plot the curve. This requires a loop
+               
+        //        for(var ndx=0;ndx<length;ndx++) {
+              //      document.write("<tr><td>" + ndx + "</td><td>" + ndx*omega + "</td><td>" + yVal[ndx] + "</td></tr>")
+             //   }
+
+               
+                // Adding harmonics increases the amplitude to a clipping level
+                // Normalization scales all amplitudes to the range of 0 to 1
+                // First, find the peak amplitude.
+                var peakAmp = 0.0;
+                for(var n=0;n<length;n++) {
+                    // Test the peakAmp with each sample: which is higher?
+                    if(yVal[n] > peakAmp){
+                        peakAmp = yVal[n];
+                    }
+                }
+                // Scale all values of yVal to the value of peakAmp
+                for(var ndx=0;ndx<length;ndx++){
+                    yVal[ndx] = yVal[ndx] * 1/peakAmp;
+                }
+                </script>
+        
+        <div id="triangle" style="width:90%; height:400px;">
+
+        <script language="javascript">
+        var source = audioCtx.createBufferSource();
+        source.buffer = myArrayBuffer;
+        source.connect(audioCtx.destination);
+        source.start();
+            Plotly.plot(triangle, [{ x: xVal, y: yVal}], { margin: { t: 0}});
+        </script>
+        
+        </div>
+        
+         <!--  </table> -->
+        
+           
+           
+           
+            </center>
+        
+        </body>
+        
+        </html>

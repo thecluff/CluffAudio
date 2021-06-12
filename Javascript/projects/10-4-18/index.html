@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+        <title>WebAudio</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+        <script src="js/script.js"></script>
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]>
+            <!-->
+            <link rel="stylesheet" href="css/layouts/side-menu.css">
+        <!--<![endif]-->
+    </head>
+    
+    <body>
+        <div id="layout">
+            <div id="main">
+                <p>
+                <h1>WebAudio</h1>
+                <h2>This plays audio. "The Heist" by J Dilla</h2>
+                </p>
+                <div class="content">
+                    <p>
+                        <button class="pure-button" id="startBtn" onclick="startAudio('audio/music.ogg',this.id)">Listen!</button>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--<script src="js/ui.js"></script>-->
+    </body>
+
+</html>
