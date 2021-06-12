@@ -9,7 +9,7 @@
   </p>
 </p>
 
-## Sound Synthesis Intro (Written Fall 2014)
+## Javascript DSP (2018)
 
 Audio Generation & Processing in Javascript.
 
