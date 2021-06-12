@@ -9,7 +9,7 @@
   </p>
 </p>
 
-## Sound Synthesis Intro (Written Fall 2014)
+## Audio Programming (C++, Javascript, Swift, PureData)
 
 <a href="https://github.com/thecluff/CluffAudio/tree/main/Javascript"><img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/></a>
 
