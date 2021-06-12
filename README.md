@@ -11,13 +11,11 @@
 
 ## Sound Synthesis Intro (Written Fall 2014)
 
-<img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+<a href="https://github.com/thecluff/CluffAudio/tree/main/Javascript"><img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/></a>
 
+<a href="https://github.com/thecluff/CluffAudio/tree/main/C%2B%2B"><img alt="C++" src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"/></a>
 
-
-<img alt="C++" src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"/>
-
-<img alt="Swift" src="https://img.shields.io/badge/swift-%23FA7343.svg?style=for-the-badge&logo=swift&logoColor=white"/>
+<a href="https://github.com/thecluff/CluffAudio/tree/main/Swift"><img alt="Swift" src="https://img.shields.io/badge/swift-%23FA7343.svg?style=for-the-badge&logo=swift&logoColor=white"/></a>
 
 Audio Generation & Processing in C++, Javascript, and Swift.
 
