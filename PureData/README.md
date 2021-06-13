@@ -5,6 +5,6 @@
   <h3 align="center">PureData Synthesis Patches</h3>
 
   <p align="center">
-    Created by Charlie Cluff
+    Created by Charlie Cluff (2014)
   </p>
 </p>
