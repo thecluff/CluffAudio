@@ -31,4 +31,7 @@ Audio Generation & Processing in C++, Javascript, and Swift.
 <li>
 <a href="https://github.com/thecluff/CluffAudio/tree/main/Swift">Swift DSP</a> - Fall 2019
 </li>
+<li>
+FAUST - Coming Soon
+</li>
 </ul>
