@@ -1,5 +1,5 @@
 ﻿<p align="center">
-    <img src="https://user-images.githubusercontent.com/29167186/121762361-44c74480-caea-11eb-939a-58d13f9b41eb.png" alt="Logo" width="100" height="100">
+    <img src="https://user-images.githubusercontent.com/29167186/144605239-2aea24aa-f88c-4a68-aa80-bbe03e14e7dd.png" alt="Logo" width="100" height="100">
 
   <h3 align="center">Audio Programming</h3>
 
