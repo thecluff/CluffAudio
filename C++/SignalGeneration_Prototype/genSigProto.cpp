@@ -1,6 +1,3 @@
-// Separate the main tasks of the previous program into functions
-// Now main() becomes more of an outline than the actual location of computation
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
